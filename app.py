@@ -1,8 +1,8 @@
 from flask import Flask
-from flask_wtf import CSRFProtect
+from flask_wtf.csrf import CSRFProtect
 
 app = Flask(__name__)
-
+app.config['WTF_CSRF_SECRET_KEY'] = 'secret'
 csrf = CSRFProtect(app)                                                                                                                           
 
 @app.route("/")
